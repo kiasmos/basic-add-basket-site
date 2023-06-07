@@ -3,12 +3,23 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav>
-      <NavLink exact activeClassName="navbarclass" to="/">
-        Home
-      </NavLink>
-      <NavLink exact activeClassName="navbarclass" to="/basket">
-        Add basket
-      </NavLink>
+      <div className="basic">
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+      </div>
+      <div className="allitemsbasket">
+        <div className="basic">
+          <NavLink exact to="/basket">
+            Basket
+          </NavLink>
+        </div>
+        <div className="addbasket">
+          <NavLink activeClassName="addbasket" to="/basket">
+            1
+          </NavLink>
+        </div>
+      </div>
     </nav>
   );
 }
