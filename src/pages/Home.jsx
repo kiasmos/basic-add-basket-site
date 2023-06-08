@@ -15,7 +15,9 @@ export default function Home({ products }) {
             <div className="card-body">
               <h5 className="card-title">{e.title}</h5>
               <p className="card-price">{e.price} AZN</p>
-              <Link to="">ADD TO CART</Link>
+              <button className="btn-grad">
+                <Link to="">ADD TO CART</Link>
+              </button>
             </div>
           </div>
         </div>

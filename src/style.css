@@ -4,6 +4,11 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 #root {
@@ -15,7 +20,7 @@
 }
 
 nav {
-  margin-bottom: 70px;
+  margin-bottom: 50px;
   width: 100%;
   padding: 0 60px;
   height: 60px;
@@ -26,28 +31,24 @@ nav {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
     rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
-.basic a {
+/* .basic a {
   color: #000000;
   text-decoration: none;
   display: inline-block;
   padding: 6px;
   position: relative;
+} */
+
+nav a {
+  text-decoration: none;
+  color: #000;
 }
 
-.basic a:focus::after {
-  width: 100%;
-  right: 0;
-}
-
-.basic a::after {
-  content: "";
-  width: 0;
-  height: 4px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  background: linear-gradient(to left, #ffcb9e, #fa9531 100%);
-  transition: width 0.5s ease 0s, right 0.5s ease 0s;
+.active {
+  background-image: linear-gradient(90deg, #e67399, #f2a640);
+  background-position: bottom;
+  background-size: 100% 15%;
+  background-repeat: no-repeat;
 }
 
 .allitemsbasket {
@@ -120,17 +121,30 @@ nav {
   color: rgba(0, 0, 0, 0.87);
 }
 
-.card-body a {
-  width: 200px;
-  height: 48px;
-  border-radius: 8px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.1px;
-  color: rgba(0, 0, 0, 0.87);
-  padding: 12px;
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #ece9e6 0%,
+    #ffffff 51%,
+    #ece9e6 100%
+  );
+  margin: 10px;
+  padding: 15px 45px;
   text-align: center;
-  position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  text-transform: uppercase;
+  font-size: 12px;
+  transition: 0.5s;
+  border: none;
+  cursor: pointer;
+  background-size: 200% auto;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #000000;
+  text-decoration: none;
 }

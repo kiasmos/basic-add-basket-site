@@ -4,13 +4,13 @@ export default function Navbar() {
   return (
     <nav>
       <div className="basic">
-        <NavLink exact to="/">
+        <NavLink activeClassName="active" to="/" exact={true}>
           Home
         </NavLink>
       </div>
-      <div className="allitemsbasket">
+      <div className="allitemsbasket" >
         <div className="basic">
-          <NavLink exact to="/basket">
+          <NavLink activeClassName="active" to="/basket" exact={true}>
             Basket
           </NavLink>
         </div>
