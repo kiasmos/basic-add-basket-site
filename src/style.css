@@ -15,7 +15,7 @@
 }
 
 nav {
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   width: 100%;
   padding: 0 60px;
   height: 60px;
@@ -34,7 +34,7 @@ nav {
   position: relative;
 }
 
-.basic a:hover::after {
+.basic a:focus::after {
   width: 100%;
   right: 0;
 }
@@ -47,7 +47,7 @@ nav {
   left: 0;
   position: absolute;
   background: linear-gradient(to left, #ffcb9e, #fa9531 100%);
-  transition: width 0.5s ease 0s, left 0.5s ease 0s;
+  transition: width 0.5s ease 0s, right 0.5s ease 0s;
 }
 
 .allitemsbasket {
@@ -69,7 +69,68 @@ nav {
   transition: transform 450ms;
 }
 
-.addbasket a:hover {
+.addbasket a:focus {
   transition: transform 125ms;
   transform: scale(1.2);
+}
+
+.main {
+  width: 100%;
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 34px;
+  row-gap: 20px;
+  align-content: flex-start;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 23%;
+  min-width: 31%;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.card-price {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.card-body a {
+  width: 200px;
+  height: 48px;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 12px;
+  text-align: center;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
