@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
+  console.log("Navbar rendered");
+
   return (
     <nav>
       <div className="basic">
@@ -8,7 +10,7 @@ export default function Navbar() {
           Home
         </NavLink>
       </div>
-      <div className="allitemsbasket" >
+      <div className="allitemsbasket">
         <div className="basic">
           <NavLink activeClassName="active" to="/basket" exact={true}>
             Basket

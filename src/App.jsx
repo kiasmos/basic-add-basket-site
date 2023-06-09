@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Navbar from "./components/navbar";
+import ContentApi from "./components/ContentApi";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Basket from "./pages/Basket";
 import Error from "./pages/Error";
@@ -10,6 +11,7 @@ import db from "./components/db.json";
 
 export default function App() {
   const [products, setProducts] = useState([]);
+  const [basketItem, setBasketItem] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,6 +20,8 @@ export default function App() {
     };
     fetchData();
   }, []);
+
+  console.log("app rendered");
 
   // const url =
   //   "https://dummyjson.com/products?limit=10&skip=10&select=title,price";
@@ -28,20 +32,30 @@ export default function App() {
   //   });
   // }, []);
 
+  function itemAdder(id) {
+    products && products.map((e) => e.id === id && console.log(e));
+  }
+
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route exact path="/">
-          <Home products={db.products} />
-        </Route>
-        <Route exact path="/basket">
-          <Basket />
-        </Route>
-        <Route path="*">
-          <Error />
-        </Route>
-      </Switch>
-    </Router>
+    <ContentApi.Provider
+      value={{ products, setProducts, itemAdder, basketItem, setBasketItem }}
+    >
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+
+          <Route exact path="/basket">
+            <Basket />
+          </Route>
+
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+      </Router>
+    </ContentApi.Provider>
   );
 }
