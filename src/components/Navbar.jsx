@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import ContentApi from "./ContentApi";
 
 export default function Navbar() {
-  console.log("Navbar rendered");
+  // console.log("Navbar rendered");
+
+  const { basketItem } = useContext(ContentApi);
 
   return (
     <nav>
@@ -18,7 +22,7 @@ export default function Navbar() {
         </div>
         <div className="addbasket">
           <NavLink activeClassName="addbasket" to="/basket">
-            1
+            {basketItem.length}
           </NavLink>
         </div>
       </div>
